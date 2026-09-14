@@ -279,7 +279,7 @@ export default function AboutPage({ onNavigate, isPageRevealed = true }) {
       name: 'Surya Teja',
       role: 'BACKEND & AI DEVELOPER',
       fullTitle: 'Backend & AI Developer',
-      image: null,
+      image: '/team/surya.jpg',
     },
     {
       name: 'Sai Krishna',
