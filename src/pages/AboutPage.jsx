@@ -249,7 +249,7 @@ export default function AboutPage({ onNavigate, isPageRevealed = true }) {
       name: 'Aravind Kamoju',
       role: 'CEO',
       fullTitle: 'Chief Executive Officer',
-      image: null,
+      image: '/team/aravind.jpg',
     },
     {
       name: 'Venkatesh',
