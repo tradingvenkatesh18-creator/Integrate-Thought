@@ -49,7 +49,7 @@ export default function AboutHeroSection({ onNavigate }) {
 
   const handleScrollToStory = (e) => {
     e.preventDefault();
-    const el = document.getElementById('team') || document.getElementById('story');
+    const el = document.getElementById('story');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }

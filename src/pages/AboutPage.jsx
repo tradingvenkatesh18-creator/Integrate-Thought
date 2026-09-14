@@ -243,37 +243,49 @@ export default function AboutPage({ onNavigate, isPageRevealed = true }) {
 
   const [activePillar, setActivePillar] = useState('engineering');
 
-  // Unified Team Members array matching editorial layout (5 core members)
+  // Unified Team Members array matching editorial layout
   const TEAM_MEMBERS = [
     {
       name: 'Aravind Kamoju',
       role: 'CEO',
       fullTitle: 'Chief Executive Officer',
-      image: '/Team/aravindkamoju.jpeg',
+      image: null,
     },
     {
       name: 'Venkatesh',
+      role: 'CTO',
+      fullTitle: 'Chief Technology Officer',
+      image: '/team/venkatesh.jpg',
+    },
+    {
+      name: 'Manohar',
+      role: 'OPERATIONS MANAGER',
+      fullTitle: 'Operations Manager',
+      image: null,
+    },
+    {
+      name: 'Ravi Teja',
       role: 'DEVELOPMENT HEAD',
       fullTitle: 'Development Head',
-      image: '/Team/raviteja.jpeg',
+      image: null,
     },
     {
       name: 'Aravindh',
       role: 'FULL STACK DEVELOPER',
       fullTitle: 'Full Stack Developer',
-      image: '/Team/aravindh.jpeg',
+      image: null,
     },
     {
       name: 'Surya Teja',
       role: 'BACKEND & AI DEVELOPER',
       fullTitle: 'Backend & AI Developer',
-      image: '/Team/surya.jpeg',
+      image: null,
     },
     {
       name: 'Sai Krishna',
       role: 'FULL STACK DEVELOPER',
       fullTitle: 'Full Stack Developer',
-      image: '/Team/saikrishna.jpeg',
+      image: null,
     },
   ];
 
@@ -718,7 +730,7 @@ export default function AboutPage({ onNavigate, isPageRevealed = true }) {
         {/* ============================================================ */}
         {/* 05 — THE TEAM: EDITORIAL TEAM GRID */}
         {/* ============================================================ */}
-        <section id="team" className="py-20 px-6 sm:px-10 lg:px-12 max-w-7xl mx-auto">
+        <section className="py-20 px-6 sm:px-10 lg:px-12 max-w-7xl mx-auto">
           {/* Top Dashed Hairline Divider */}
           <div className="w-full border-t border-dashed border-slate-300/80 mb-12 sm:mb-16" />
 
@@ -750,13 +762,30 @@ export default function AboutPage({ onNavigate, isPageRevealed = true }) {
                     )}
                   >
                     {/* Aspect-Locked Portrait Frame */}
-                    <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden bg-slate-100/90 border border-slate-200/60 shadow-2xs group-hover:shadow-lg group-hover:shadow-slate-200/60 transition-all duration-300">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
-                        loading="lazy"
-                      />
+                    <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/70 shadow-2xs group-hover:shadow-lg group-hover:shadow-slate-200/60 transition-all duration-300">
+                      {member.image ? (
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-50 via-slate-100 to-slate-200/90 p-6 select-none transition-transform duration-500 ease-out group-hover:scale-105">
+                          <div className="w-20 h-20 rounded-2xl bg-white/90 border border-slate-200/80 shadow-xs flex items-center justify-center group-hover:border-sky-300 group-hover:shadow-md transition-all duration-300">
+                            <span className="font-sans font-bold text-2xl text-slate-700 tracking-wider">
+                              {member.name
+                                .split(' ')
+                                .map((n) => n[0])
+                                .join('')
+                                .slice(0, 2)}
+                            </span>
+                          </div>
+                          <div className="mt-3 text-[10px] font-mono uppercase tracking-widest text-slate-400 group-hover:text-slate-600 transition-colors">
+                            {member.role}
+                          </div>
+                        </div>
+                      )}
                     </div>
 
                     {/* Member Name & Role */}
