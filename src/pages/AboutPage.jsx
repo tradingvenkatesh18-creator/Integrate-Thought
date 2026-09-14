@@ -285,7 +285,7 @@ export default function AboutPage({ onNavigate, isPageRevealed = true }) {
       name: 'Sai Krishna',
       role: 'FULL STACK DEVELOPER',
       fullTitle: 'Full Stack Developer',
-      image: null,
+      image: '/team/saikrishna.jpg',
     },
   ];
 
