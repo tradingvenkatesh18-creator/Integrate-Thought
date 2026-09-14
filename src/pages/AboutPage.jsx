@@ -273,7 +273,7 @@ export default function AboutPage({ onNavigate, isPageRevealed = true }) {
       name: 'Aravindh',
       role: 'FULL STACK DEVELOPER',
       fullTitle: 'Full Stack Developer',
-      image: null,
+      image: '/team/aravindh.jpg',
     },
     {
       name: 'Surya Teja',
